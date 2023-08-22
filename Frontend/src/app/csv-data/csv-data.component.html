@@ -1,0 +1,62 @@
+<div>
+  <div class="success-message" *ngIf="showSuccessMessage">{{ successMessage }}</div>
+  <div class="success-message" *ngIf="showSuccessMessage">{{ successData }}</div>
+  <div class="error-message" *ngIf="showErrorMessage">{{ ErrorMessage }}</div>
+  <div *ngIf="showErrorMessage" class="error-message">Invalid file format. Please select a CSV file.</div>
+  <div class="noFile-message" *ngIf="showNoFileMessage">{{   showNoFileMessage  }}</div>
+
+  
+  <form class="styled-form">
+    <div>
+      <label for="csvFile">CSV File:</label>
+      <input type="file" id="csvFile">
+    </div>
+  <div>
+    <button (click)="validateCsv($event)">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click)="readCsvData($event)">Explore</button>
+  </div>
+
+  
+  <div class="csv-url-container">
+    <button *ngFor="let url of csvFileUrls" (click)="scheduleCsvUrlTask([url])" class="csv-url-button">Schedule URL: {{ url }}</button>
+  </div>
+  
+  
+   <!-- <div>
+    <button (click)="celerycomp()">Celery</button>
+  </div> -->
+
+  <div>
+    <button (click)="Gocharts()">Show Bar Chart</button>
+  </div>
+
+  </form>
+  
+  <div *ngIf="csvFileUrls.length > 0" class="styled-form">
+    <h2>CSV URLs:</h2>
+    <ul>
+      <li *ngFor="let url of csvFileUrls">
+        <a [href]="url" target="_blank">{{ url }}</a><br>
+        <button (click)="plotAreaChart(csvData)" >View Highchart</button>
+      </li>
+    </ul>
+  </div>
+
+  <table *ngIf="showTable">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of csvData">
+        <td *ngFor="let header of headers">{{ row[header] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div [id]="chartId"></div>
+</div>
+
+

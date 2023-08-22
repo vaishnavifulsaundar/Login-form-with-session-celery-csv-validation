@@ -1,0 +1,4 @@
+<div class="csv-url-container">
+    <button *ngFor="let url of csvFileUrls" (click)="scheduleCsvUrlTask([url])" class="csv-url-button">Schedule URL: {{ url }}</button>
+  </div>
+  

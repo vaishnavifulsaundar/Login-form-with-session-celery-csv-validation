@@ -1,0 +1,56 @@
+
+span{
+    color:#923792;
+    margin-left: 8rem;
+}
+
+
+.first{
+    text-align: center;
+    color: blue;
+}
+
+h2{
+    margin-left: 1rem;
+    font-style: Poppins;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 82vh;
+    width: 37rem;
+    margin-left: 16rem;
+  }
+  
+  .form-wrapper {
+    padding: 20px;
+    width: 800px;
+    font-family: Poppins;
+    background-color: #e7e7e7;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  
+  .form-container {
+    margin-top: 20px;
+    height:13rem;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  

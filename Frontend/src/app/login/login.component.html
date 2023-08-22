@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <div class="form-wrapper">
+      <div class="first">
+        <h1>Login Form</h1>
+      </div>
+
+      <div class="form-container">
+
+        <form [formGroup]="MarvellousForm">
+          <div class="form-group">
+            <label>Name*</label>
+            <input
+              [style.width.rem]="15"
+              [class.is-invalid]="MarvellousForm.get('Name')?.invalid && MarvellousForm.get('Name')?.touched"
+              type="text"
+              class="form-control"
+              formControlName="Name"
+              [(ngModel)]="username">
+            <small
+              [class.d-none]="MarvellousForm.get('Name')?.valid || MarvellousForm.get('Name')?.untouched"
+              class="text-danger">
+              Name is required
+            </small>
+          </div>
+
+  
+          <div class="form-column">
+            <div class="form-group">
+              <label>Password*</label>
+              <input
+                [style.width.rem]="15"
+                [class.is-invalid]="MarvellousForm.get('Password')?.invalid && MarvellousForm.get(' Password')?.touched"
+                type="password"
+                class="form-control"
+                formControlName="Password"
+                [(ngModel)]="password"
+              >
+              <small
+                [class.d-none]="MarvellousForm.get('Password')?.valid || MarvellousForm.get('Password')?.untouched"
+                class="text-danger"
+              >
+               password is required
+              </small>
+            </div>
+          </div>
+           
+        <button type="submit" class="btn btn-primary"  (click)="login()">Login</button>
+        </form>
+      
+    </div>
+  </div>
+
+
+
